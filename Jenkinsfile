@@ -40,7 +40,7 @@ stage('DockerBuild') {
 
 steps {
 
-sh 'docker build -t service/g2-allergy-service:latest .'
+sh 'docker build -t 8962311939/g2-allergy-service:latest .'
 
 }
 
@@ -60,7 +60,7 @@ stage('Push') {
 
 steps {
 
-sh 'docker push services/g2-allergy-service'
+sh 'docker push 8962311939/g2-allergy-service'
 
 }
 
