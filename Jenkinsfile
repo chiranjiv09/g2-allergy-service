@@ -60,7 +60,7 @@ stage('Push') {
 
 steps {
 
-sh 'docker push 8962311939/g2-allergy-service'
+sh 'docker push services/g2-allergy-service'
 
 }
 
