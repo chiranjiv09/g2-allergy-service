@@ -1,4 +1,4 @@
-package com.pms.controller;
+package com.pms.Controller;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -20,7 +20,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CentralizedLogging {
 
-	private static final String POINTCUT = "within(com.pms.controller.*)";
+	
+	private static final String POINTCUT = "within(com.pms.Controller.*)";
 
 	@Around(POINTCUT)
 	public Object logArroundExec(ProceedingJoinPoint pjp) throws Throwable {
@@ -45,3 +46,5 @@ public class CentralizedLogging {
 		return sb.toString();
 	}
 }
+
+
