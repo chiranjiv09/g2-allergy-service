@@ -1,7 +1,7 @@
 FROM openjdk:17
 
-EXPOSE 9002
+EXPOSE 9003
 
-ADD /target/g2-allergy-service-1.0.0-Release.jar g2-allergy-service-1.0.0-Release.jar
+ADD /target/g2-appointment-service.jar g2-appointment-service.jar
 
-ENTRYPOINT [ "java","-jar","/g2-allergy-service-1.0.0-Release.jar"]
+ENTRYPOINT [ "java","-jar","/g2-appointment-service.jar"]

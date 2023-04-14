@@ -8,7 +8,7 @@ stage('Checkout'){
 
 steps{
 
-git branch: "main", url: 'https://github.com/chiranjiv09/g2-allergy-service.git'
+git branch: "main", url: 'https://github.com/chiranjiv09/g2-appointment-service.git'
 
 }
 
@@ -40,7 +40,7 @@ stage('DockerBuild') {
 
 steps {
 
-sh 'docker build -t service/g2-allergy-service:latest .'
+sh 'docker build -t kushck09/g2-appointment-service:latest .'
 
 }
 
@@ -50,7 +50,7 @@ stage('Login') {
 
 steps {
 
-sh 'echo dockerhub123 | docker login -u 8962311939 --password-stdin'
+sh 'echo dockerhub123 | docker login -u kushck09 --password-stdin'
 
 }
 
@@ -60,7 +60,7 @@ stage('Push') {
 
 steps {
 
-sh 'docker push 8962311939/g2-allergy-service'
+sh 'docker push kushck09/g2-appointment-service'
 
 }
 

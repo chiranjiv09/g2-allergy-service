@@ -25,7 +25,7 @@ public class CustomIdGenerator implements IdentifierGenerator {
 	@Override
 	public Serializable generate(SharedSessionContractImplementor session, Object entityObject)
 			throws HibernateException {
-		String uuid = UUID.randomUUID().toString().substring(0, 2);
+		String uuid = UUID.randomUUID().toString().substring(0, 4);
 		return (prefix + uuid).toUpperCase();
 	}
 }
