@@ -8,7 +8,7 @@ stage('Checkout'){
 
 steps{
 
-git branch: "main", url: 'https://github.com/chiranjiv09/g2-appointment-service.git'
+git branch: "main", url: 'https://github.com/chiranjiv09/g2-allergy-service.git'
 
 }
 
@@ -40,7 +40,7 @@ stage('DockerBuild') {
 
 steps {
 
-sh 'docker build -t kushck09/g2-appointment-service:latest .'
+sh 'docker build -t kushck09/g2-allergy-service:latest .'
 
 }
 
@@ -60,7 +60,7 @@ stage('Push') {
 
 steps {
 
-sh 'docker push kushck09/g2-appointment-service'
+sh 'docker push kushck09/g2-allergy-service'
 
 }
 

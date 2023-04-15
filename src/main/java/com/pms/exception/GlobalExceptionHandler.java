@@ -28,43 +28,21 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 		return new ResponseEntity<ErrorResponse>(errorDetails, HttpStatus.NOT_FOUND);
 	}
 
-	@ExceptionHandler(AppointmentServiceException.class)
-	public ResponseEntity<?> appointmentServiceNotFoundExceptions(AppointmentServiceException ex, WebRequest request) {
+	@ExceptionHandler(AllergyServiceException.class)
+	public ResponseEntity<?> AllergyServiceNotFoundExceptions(AllergyServiceException ex, WebRequest request) {
 		ErrorResponse errorDetails = new ErrorResponse(HttpStatus.NOT_FOUND, LocalDateTime.now(), ex.getMessage(),
 				request.getDescription(false));
 		return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
 	}
 
 	@ExceptionHandler
-	public ResponseEntity<ErrorResponse> appointmentServiceBadRequestExceptions(Exception ex, WebRequest request) {
+	public ResponseEntity<ErrorResponse> alergyServiceBadRequestExceptions(Exception ex, WebRequest request) {
 		ErrorResponse errorDetails = new ErrorResponse(HttpStatus.BAD_REQUEST, LocalDateTime.now(), ex.getMessage(),
 				request.getDescription(false));
 		return new ResponseEntity<ErrorResponse>(errorDetails, HttpStatus.BAD_REQUEST);
 	}
 
-	// @ExceptionHandler(MethodArgumentNotValidException.class)
-	// public ResponseEntity<?>
-	// handleValidationExceptions(MethodArgumentNotValidException ex, WebRequest
-	// request) {
-	// Map<String, String> errors = new HashMap<>();
-	// ex.getBindingResult().getAllErrors().forEach((error) -> {
-	// String fieldName = ((FieldError) error).getField();
-	// String errorMessage = error.getDefaultMessage();
-	// errors.put(fieldName, errorMessage);
-	// });
-	// ErrorResponse errorDetails = new ErrorResponse(HttpStatus.BAD_REQUEST,
-	// LocalDateTime.now(), errors.toString(),
-	// request.getDescription(false));
-	// return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
-	// }
 
-	// Above is custom definition of protected ResponseEntity<Object>
-	// handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders
-	// headers, HttpStatusCode status, WebRequest request)
-
-	// https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/mvc/method/annotation/ResponseEntityExceptionHandler.html
-	// Handling HttpMessageNotReadableException
-	// This exception will be triggered if the request body is invalid:
 	@Override
 	protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex,
 			HttpHeaders headers, HttpStatusCode status, WebRequest request) {
